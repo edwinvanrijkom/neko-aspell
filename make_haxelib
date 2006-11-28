@@ -49,7 +49,6 @@ cp bin/mac/$ID.ndll $ID/ndll/Mac/$ID.ndll
 cfo "copying $ID.ndll for Mac"
 
 # samples
-mkdir $ID/samples
 cfo "creating Samples folder"
 cd samples
 svn export . ../$ID/samples

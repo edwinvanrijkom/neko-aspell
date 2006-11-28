@@ -9,10 +9,10 @@ class App {
 		, "GNU"
 		];
 		
-	static var lib_path = {
-		Windows: "../../tools/libaspell-15.dll";
-		Mac: "../../tools/libaspell-15.
-	};
+	static var lib_path = 
+		{ Windows: "../../tools/libaspell-15.dll"
+		, Mac: "../../tools/libaspell.15.dylib"
+		};
 	
 	static var dict_dir = "../../tools/dictionary";		
 			
