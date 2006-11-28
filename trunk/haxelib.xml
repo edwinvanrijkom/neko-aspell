@@ -1,0 +1,5 @@
+<project name="aspell" url="http://code.google.com/p/neko-aspell/" license="LGPL">
+    <user name="aspell"/>
+    <description>Neko Aspell enables using GNU Aspell from Neko/haXe</description>
+    <version name="1.0.0.0">Initial release</version>
+</project>

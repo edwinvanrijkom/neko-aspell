@@ -1,0 +1,8 @@
+-neko win/app.n
+-main Test
+-cp ../api
+
+--next
+-neko mac/app.n
+-main Test
+-cp ../api
