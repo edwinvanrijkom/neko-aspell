@@ -1,0 +1,160 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeTarget = D2AAC0620554660B00DB518D /* aspell */;
+		addToTargets = (
+			D2AAC0620554660B00DB518D /* aspell */,
+		);
+		breakpointsGroup = E86FE2020B0D28E600919E87 /* XCBreakpointsBucket */;
+		codeSenseManager = E86FE1FF0B0D28A100919E87 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXErrorsWarningsDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXErrorsWarningsDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					300,
+					45.2085,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXErrorsWarningsDataSource_TypeID,
+					PBXErrorsWarningsDataSource_MessageID,
+					PBXErrorsWarningsDataSource_LocationID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					149,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					200,
+					10,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 186404059;
+			PBXWorkspaceStateSaveDate = 186404059;
+		};
+		perUserProjectItems = {
+			E84EA6E80B11A57F0028202F = E84EA6E80B11A57F0028202F /* PBXTextBookmark */;
+			E89D7F170B1C4CEE00E25F6C /* PBXTextBookmark */ = E89D7F170B1C4CEE00E25F6C /* PBXTextBookmark */;
+			E8AC326B0B11ED7A0058A042 = E8AC326B0B11ED7A0058A042 /* PBXTextBookmark */;
+		};
+		sourceControlManager = E86FE1FE0B0D28A100919E87 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	D2AAC0620554660B00DB518D /* aspell */ = {
+		activeExec = 0;
+	};
+	E84EA6E80B11A57F0028202F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E84EA6E90B11A57F0028202F /* aspell.h */;
+		name = "unsigned int aspell_error_number(const struct AspellCanHaveError * ths);";
+		rLen = 73;
+		rLoc = 6598;
+		rType = 0;
+		vrLen = 2433;
+		vrLoc = 6071;
+	};
+	E84EA6E90B11A57F0028202F /* aspell.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = aspell.h;
+		path = "/Users/Edwin/Documents/projects/neko-aspell/projects/../include/aspell/aspell.h";
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {830, 10220}}";
+			sepNavSelRange = "{6598, 73}";
+			sepNavVisRect = "{{0, 2604}, {579, 985}}";
+		};
+	};
+	E86FE1FA0B0D28A100919E87 /* api.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1082, 5222}}";
+			sepNavSelRange = "{9325, 0}";
+			sepNavVisRect = "{{0, 4237}, {579, 985}}";
+			sepNavWindowFrame = "{{243, 55}, {624, 1114}}";
+		};
+	};
+	E86FE1FE0B0D28A100919E87 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+		scmType = "";
+	};
+	E86FE1FF0B0D28A100919E87 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	E86FE2020B0D28E600919E87 /* XCBreakpointsBucket */ = {
+		isa = XCBreakpointsBucket;
+		name = "Project Breakpoints";
+		objects = (
+		);
+	};
+	E89D7F170B1C4CEE00E25F6C /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E84EA6E90B11A57F0028202F /* aspell.h */;
+		name = "unsigned int aspell_error_number(const struct AspellCanHaveError * ths);";
+		rLen = 73;
+		rLoc = 6598;
+		rType = 0;
+		vrLen = 2433;
+		vrLoc = 6071;
+	};
+	E8AC326B0B11ED7A0058A042 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E8AC326C0B11ED7A0058A042 /* aspell.h */;
+		name = "unsigned int aspell_error_number(const struct AspellCanHaveError * ths);";
+		rLen = 73;
+		rLoc = 6598;
+		rType = 0;
+		vrLen = 2433;
+		vrLoc = 6071;
+	};
+	E8AC326C0B11ED7A0058A042 /* aspell.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = aspell.h;
+		path = "/Users/Edwin/Documents/projects/neko-aspell/projects/../include/aspell/aspell.h";
+		sourceTree = "<absolute>";
+	};
+}
