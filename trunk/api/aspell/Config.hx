@@ -25,9 +25,9 @@ class Config {
 	
 	var c : Void;
 	
-	static var _nas_new_config = neko.Lib.load("aspell","nas_new_config",0);
-	public function new() {
-		c = _nas_new_config();
+	static var _nas_new_config = neko.Lib.load("aspell","nas_new_config",1);
+	public function new(?lib_path: String) {		
+		c = _nas_new_config(if (lib_path==null) null else (untyped lib_path.__s));
 	}
 	
 	static var _nas_config_replace = neko.Lib.load("aspell","nas_config_replace",3);

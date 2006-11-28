@@ -24,27 +24,29 @@
 #include <aspell/aspell.h>
 
 #include <stdlib.h>
+#include <string.h>
 
 /* Library loading
  *
- */
-#define LIBASPELL_WIN "libaspell-15.dll"
-#define LIBASPELL_MAC "libaspell.15.dylib"
+ */ 
+
+static char lib_path[1024];
  
 #ifdef NEKO_WINDOWS
 
 #include <Windows.h>
 
+#define LIBASPELL_PATH "libaspell-15.dll"
+#define resolve(L,S) GetProcAddress(L,S)
+
 HINSTANCE lib(){
 	static HINSTANCE hlib = NULL;
-	if (!hlib) hlib = LoadLibrary(LIBASPELL_WIN);
+	if (!hlib) hlib = LoadLibrary(lib_path);
 	if(!hlib) {		
-		failure("Failed to load GNU Aspell library ("LIBASPELL_WIN")");
+		failure("Failed to load GNU Aspell library ("LIBASPELL_PATH")");
 	}
 	return hlib;
 }
-
-#define resolve(L,S) GetProcAddress(L,S)
 
 #endif
 
@@ -52,16 +54,17 @@ HINSTANCE lib(){
 
 #include <dlfcn.h>
 
+#define LIBASPELL_PATH "libaspell.15.dylib"
+#define resolve(L,S) dlsym(L,S)
+
 void *lib(){
 	static void *handle = NULL;
-	if(!handle) handle = dlopen(LIBASPELL_MAC,RTLD_GLOBAL);
+	if(!handle) handle = dlopen(lib_path,RTLD_GLOBAL);
 	if(!handle) {		
-		failure("Failed to load GNU Aspell library ("LIBASPELL_MAC")");
+		failure("Failed to load GNU Aspell library ("LIBASPELL_PATH")");
 	}
 	return handle;
 }
-
-#define resolve(L,S) dlsym(L,S)
 
 #endif
 
@@ -217,7 +220,7 @@ void finalize( value v ) {
 				es = es->next;				
 			}
 			delete_aspell_config(c->config);
-			free(c);
+			free(c);			
 		} else 		
 		if (val_kind(v)==k_nas_speller) {
 			// speller			
@@ -251,9 +254,12 @@ void finalize( value v ) {
  */
 
 // Construct a new configuration
-static value nas_new_config() {
+static value nas_new_config(value path) {
 	nas_config *c = malloc(sizeof(nas_config));
 	value r;
+	
+	// get prefered path if specified:
+	strcpy((char*)lib_path,path == val_null? LIBASPELL_PATH : val_string(path));
 
 	c->config = new_aspell_config();
 	c->errors = NULL;
@@ -263,7 +269,7 @@ static value nas_new_config() {
 	val_gc(r,finalize);
 	return r;
 }
-DEFINE_PRIM(nas_new_config,0);
+DEFINE_PRIM(nas_new_config,1);
 
 // Replace a configuration setting
 static value nas_config_replace(value config, value var, value val) {
