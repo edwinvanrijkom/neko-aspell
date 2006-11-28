@@ -17,7 +17,7 @@ if [ -f $ID.zip ]; then
 	cfo "removing previous zip package"
 fi
 
-if [ -d $ID.zip ]; then	
+if [ -d $ID ]; then	
 	rm -R $ID
 	cfo "removing previous package source tree"
 fi
@@ -33,10 +33,10 @@ cp LICENSE.txt $ID
 cfo "copying LICENSE.txt"
 
 #haxe api
-cd api/haxe/$ID
-svn export . ../../../$ID/$ID
+cd api/$ID
+svn export . ../../$ID/$ID
 cfo "exporting haXe API from SVN"
-cd ../../..
+cd ../..
 
 # ndlls
 mkdir -p $ID/ndll/Windows
@@ -48,17 +48,27 @@ cfo "creating NDLL Mac folder"
 cp bin/mac/$ID.ndll $ID/ndll/Mac/$ID.ndll
 cfo "copying $ID.ndll for Mac"
 
+# samples
+mkdir $ID/samples
+cfo "creating Samples folder"
+cd samples
+svn export . ../$ID/samples
+cfo "exporting samples"
+cd ..
+
 #tools
 mkdir $ID/tools
 cfo "creating Tools folder"
-cp -R bin/mac/$ID.app $ID/tools/$ID.app
-cfo "copying Mac Boot loader"
-chmod -R 755 $ID/tools/$ID.app
-cfo "updating rights on Mac Boot loader"
-cp bin/win/$ID.exe $ID/tools/$ID.exe
-cfo "copying Windows Boot loader"
-cp TOOLS.README.txt $ID/tools/README.txt
-cfo "copying TOOLS.README.txt"
+cd bin/dictionary
+svn export . ../../$ID/tools/dictionary
+cfo "exporting aspell English dictionary"
+cd ../mac
+svn export libaspell.15.dylib ../../$ID/tools/libaspell.15.dylib
+cfo "exporting precompiled OSX Universal aspell library"
+cd ../win
+svn export libaspell-15.dll ../../$ID/tools/libaspell-15.dll
+cfo "exporting precompiled Windows aspell library"
+cd ../..
 
 #source
 mkdir $ID/src
@@ -72,12 +82,6 @@ cfo "exporting project source files from SVN"
 cd ../include
 svn export . ../$ID/src/include
 cfo "exporting include files from SVN"
-cd ..
-
-#samples
-cd samples
-svn export . ../$ID/samples
-cfo "exporting samples from SVN"
 cd ..
 
 #zip it!
