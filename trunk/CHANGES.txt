@@ -5,4 +5,4 @@ TODO:
 	Extend supported Aspell C API methods
 	Possible Linux port
 
-2006-11-23 : 1.0.0.0 (Initial release)
+2006-11-28 : 1.0.0.0 (Initial release)
