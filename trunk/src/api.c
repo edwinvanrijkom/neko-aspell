@@ -50,20 +50,25 @@ HINSTANCE lib(){
 
 #endif
 
-#ifdef NEKO_MAC
+#if defined(NEKO_MAC) || defined(NEKO_LINUX)
 
 #include <dlfcn.h>
 
+#if defined(NEKO_MAC)
 #define LIBASPELL_PATH "libaspell.15.dylib"
+#elif defined(NEKO_LINUX)
+#define LIBASPELL_PATH "libaspell.so.15"
+#endif
+
 #define resolve(L,S) dlsym(L,S)
 
 void *lib(){
-	static void *handle = NULL;
-	if(!handle) handle = dlopen(lib_path,RTLD_GLOBAL);
-	if(!handle) {		
-		failure("Failed to load GNU Aspell library ("LIBASPELL_PATH")");
-	}
-	return handle;
+        static void *handle = NULL;
+        if(!handle) handle = dlopen(lib_path,RTLD_GLOBAL);
+        if(!handle) {
+                failure("Failed to load GNU Aspell library ("LIBASPELL_PATH")");
+        }
+        return handle;
 }
 
 #endif
