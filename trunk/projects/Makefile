@@ -10,5 +10,5 @@ NEKO_FLAGS:=-fPIC -shared -L/usr/lib -lneko
 
 
 $(NDLL): $(SRCS)
-        @echo srcs: $(SRCS)
-        $(CC) $(NEKO_FLAGS) $(GTK_FLAGS) $(GCONF_FLAGS) -o $@ $(SRCS)
+	@echo srcs: $(SRCS)
+	$(CC) $(NEKO_FLAGS) $(GTK_FLAGS) $(GCONF_FLAGS) -o $@ $(SRCS)
