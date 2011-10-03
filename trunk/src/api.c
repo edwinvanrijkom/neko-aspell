@@ -64,7 +64,7 @@ HINSTANCE lib(){
 
 void *lib(){
         static void *handle = NULL;
-        if(!handle) handle = dlopen(lib_path,RTLD_GLOBAL);
+        if(!handle) handle = dlopen(lib_path, RTLD_NOW | RTLD_GLOBAL);
         if(!handle) {
                 failure("Failed to load GNU Aspell library ("LIBASPELL_PATH")");
         }
